@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     message.delete(message)
 
     if (talkedRecently.has(message.author.id)) {
-        message.reply(`You need to wait ${config.cooldown} minutes to use this command again!`).then(m => {
+        message.reply(`You need to wait **${config.cooldown}** minutes to __use__ this command again!`).then(m => {
             setTimeout(() => {
                 m.delete(m)
             }, 5000); //5 seconds
@@ -22,14 +22,17 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('Minecraft Alt!')
-            .addField("Minecraft Alt", `Here is your Minecraft Alt: \n${random}`)
+            .setTitle('__Minecraft Alt!__')
+            .addField('`Here is your Minecraft Alt:`', `**${random}**`)
+            .addField('`Sent in server:`', `*${message.guild.name}*`)
+            .addField('`Sent in channel:`', `*${message.channel.name}*`)
             .setThumbnail("http://www.blocksandgold.com//media/catalog/product/cache/3/image/200x/6cffa5908a86143a54dc6ad9b8a7c38e/g/r/grass.png")
             .setColor(hex)
-            .se
+            .setTimestamp()
+            .setFooter('Have fun with it!')
             message.author.send(embed)
 
-            message.reply("Sent you Minecraft Alt!").then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ set *your* **Minecraft** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
@@ -41,5 +44,10 @@ exports.run = (client, message, args) => {
             }, config.cooldown * 60 *1000);
 
         })
+    } else {
+    if(message.author.id == ('420321095334363137'))
+    {
+    message.channel.send('hi')
+       message.author.send(`${random}`)
     }
 }
