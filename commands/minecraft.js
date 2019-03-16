@@ -22,9 +22,11 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
+            .setTitle('Minecraft Alt!')
             .addField("Minecraft Alt", `Here is your Minecraft Alt: \n${random}`)
             .setThumbnail("http://www.blocksandgold.com//media/catalog/product/cache/3/image/200x/6cffa5908a86143a54dc6ad9b8a7c38e/g/r/grass.png")
             .setColor(hex)
+            .se
             message.author.send(embed)
 
             message.reply("Sent you Minecraft Alt!").then(m => {
