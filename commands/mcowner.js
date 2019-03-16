@@ -5,15 +5,6 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-    message.delete(message)
-
-    if (talkedRecently.has(message.author.id)) {
-        message.reply(`You need to wait **${config.cooldown}** minutes to __use__ this command again!`).then(m => {
-            setTimeout(() => {
-                m.delete(m)
-            }, 5000); //5 seconds
-        })
-    } else {
         fs.readFile('./minecraft.txt', function(err, data){
             if(err) throw err;
             data = data + '';
@@ -45,4 +36,3 @@ exports.run = (client, message, args) => {
           
         })
     }
-}
