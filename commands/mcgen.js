@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
             .setFooter('Have fun with it!')
             message.author.send(embed)
 
-            message.reply(`Hey **${message.author.tag}**, I __successfully__ set *your* **Minecraft** Alt in DMS!`).then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Minecraft** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
