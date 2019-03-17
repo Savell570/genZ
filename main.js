@@ -6,7 +6,7 @@ const config = require("./config.json")
 client.on('ready', () => {
    client.user.setPresence({
         game: {
-            name: config.status,
+            name: `Over ${config.status}`,
             type: "WATCHING"
         }
    })
