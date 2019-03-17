@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
             .addField('`MC Java Edition:`', `*!mcgen*`)
             .addField('`Spotify:`', `*!spotifygen*`)
             .addField('`Fortnite:`', `*Require Premium!*`)
-            .addField('Donate and get premium (Contact: AvionMoine10575#4311) to claim it!', `C`)
+            .addField('Donate and get premium (Contact: AvionMoine10575#4311) to claim it!', `[Donate here!](https://paypal.me/avionmoine)`)
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
