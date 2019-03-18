@@ -34,10 +34,10 @@ client.on("message", message => {
     } catch (err) {
         console.error(err);
     } 
-  if(message.content === 'set')
-  {
-    message.channel.send(readme);
-  }
+});
+
+client.on("message", message => {
+  if (message.content === 'hey') return message.author.send(readme);
 });
 
 client.on("error", (e) => console.error(e));
