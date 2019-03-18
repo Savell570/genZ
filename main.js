@@ -19,6 +19,8 @@ client.on('ready', () => {
 
 });
 
+var readme = fs.readFileSync('./prefix.txt', 'utf8');
+
 client.on("message", message => {
     if (message.author.bot) return;
     if (message.content.indexOf(config.prefix) !== 0) return;
@@ -34,9 +36,7 @@ client.on("message", message => {
     } 
   if(message.content === 'set')
   {
-
-  }
-}); 
+    message.channel.send(readme);
   }
 });
 
