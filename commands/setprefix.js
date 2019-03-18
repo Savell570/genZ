@@ -7,15 +7,15 @@ const fs = require('fs');
 const config = require("../config.json")
 
 exports.exec = async (message, args) => {
-  
- fs.editFile('./config.json', 'utf-8', function(err, data){
-    if (err) throw err;
 
-    console.log(typeof(data)); // string
+fs.writeFile("./prefix.txt", "Hey there!", function(err) {
+    if(err) {
+        return console.log(err);
+    }
 
-    data.replace(/\.\/+/, '-');
-
+    console.log("The file was saved!");
 }); 
+  
 };
 
 exports.help = {
