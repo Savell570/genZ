@@ -31,7 +31,13 @@ client.on("message", message => {
         commandFile.run(client, message, args);
     } catch (err) {
         console.error(err);
-    }
+    } 
+  if(message.content === 'set')
+  {
+
+  }
+}); 
+  }
 });
 
 client.on("error", (e) => console.error(e));
