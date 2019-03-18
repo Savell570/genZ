@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
             .addField('***Awesome alts that you can get:***', '­­­')
             .addField('`MC Java Edition:`', `*!mcgen*`)
             .addField('`Spotify:`', `*!spotifygen*`)
-            .addField(`You can suggest your accounts idea!\nDo: **!suggest [alts idea]**`)
+            .addField(`You can suggest your accounts idea!\nDo: **!suggest [alts idea]**`, '­­­')
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
