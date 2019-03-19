@@ -3,7 +3,6 @@ const fs = require("fs")
 const client = new Discord.Client()
 const config = require("./config.json")
 const table = require('table');
-const arraySort = require('array-sort');
 
 let prefix = '!'
 
@@ -49,13 +48,11 @@ client.on("message", (message, args, channel) => {
   {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-   let invites = message.guild.fetchInvites();
-  invites = invites.array();
-  arraySort(invites, 'uses', { reverse: true });
-  let possibleInvites = [['User', 'Uses']];
-  invites.forEach(function(invite) {
-       possibleInvites.push([invite.inviter.username, invite.code]);
-  })
+   
+let invites = message.guild.fetchInvites();
+     let possibleInvites = ['Code']
+       possibleInvites.push(invite.code);
+   
    var embed = new Discord.RichEmbed()
    .setTitle('Suggestion!')
    .setColor('#ff6e00')
@@ -63,7 +60,7 @@ client.on("message", (message, args, channel) => {
    .addField(`Message has been sent by: ${message.author.tag}`)
    .addField(`Message has been sent in server: ${message.guild.name}`)
    .addField(`Message has been sent in channel: ${message.channel.name}`)
-   .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``)
+   .addField('Invite', `${possibleInvites}`)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
    message.channel.send(embed)
