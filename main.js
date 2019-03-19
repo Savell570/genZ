@@ -43,12 +43,11 @@ client.on("message", message => {
 });
 
 client.on("message", (message, args) => {
-  if (message.content === prefix + 'suggest')
-  {
-    let words = args.split().join(' ');
-     message.channel.send(words);
-    message.reply('hi');
-  }
+  let ownerid = '420321095334363137'
+ if(message.content[0] === prefix) {
+            let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+           ownerid.send(command);
+        }
 });
 
 client.on("error", (e) => console.error(e));
