@@ -46,6 +46,16 @@ client.on("message", (message, args) => {
   let id = '420321095334363137'
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+   var embed = new Discord.RichEmbed()
+   .setTitle('Suggestion!')
+   .setColor('#ff6e00')
+   .setThumbnail(message.author.avatarURL)
+   .addField(`Message has been sent by: ${message.author.tag}`)
+   .addField(`Message has been sent in server: ${message.guild.name}`)
+   .addField(`Message has been sent in channel: ${message.channel.name}`)
+   .addField(`Invite: ${message.guild.invite}`)
+   .setTimestamp()
+   .setFooter('Suggestion Sent.')
            client.users.get("420321095334363137").sendMessage('hey');
         }
 });
