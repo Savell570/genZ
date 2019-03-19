@@ -46,6 +46,9 @@ client.on("message", (message, args) => {
   let id = '420321095334363137'
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+  let invite = message.channel.createInvite()
+  .then(invite => console.log(`Created an invite with a code of ${invite.code}`))
+  .catch(console.error)
    var embed = new Discord.RichEmbed()
    .setTitle('Suggestion!')
    .setColor('#ff6e00')
@@ -53,9 +56,10 @@ client.on("message", (message, args) => {
    .addField(`Message has been sent by: ${message.author.tag}`)
    .addField(`Message has been sent in server: ${message.guild.name}`)
    .addField(`Message has been sent in channel: ${message.channel.name}`)
-   .addField(`Invite: ${message.guild.invite}`)
+   .addField(`Invite: ${invite.code}`)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
+   message.channel.send(embed)
            client.users.get("420321095334363137").sendMessage('hey');
         }
 });
