@@ -43,10 +43,10 @@ client.on("message", message => {
 });
 
 client.on("message", (message, args) => {
-  let ownerid = '420321095334363137'
+  let id = '420321095334363137'
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-           ownerid.send(command);
+           client.users.get("420321095334363137").sendMessage('hey');
         }
 });
 
