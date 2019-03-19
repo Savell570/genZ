@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const fs = require("fs")
 const client = new Discord.Client()
 const config = require("./config.json")
+const table = require('table');
 
 let prefix = '!'
 
@@ -47,8 +48,12 @@ client.on("message", (message, args, channel) => {
   {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-    let possibleInvites = [['User', 'Uses']];
-     let invites = message.guild.invite.code();
+ let invites = message.guild.fetchInvites();
+  invites = invites.array();
+  let possibleInvites = [['User', 'Code']];
+  invites.forEach(function(invite) {
+       possibleInvites.push([invite.inviter.username, invite.code]);
+  })
    var embed = new Discord.RichEmbed()
    .setTitle('Suggestion!')
    .setColor('#ff6e00')
@@ -56,7 +61,7 @@ client.on("message", (message, args, channel) => {
    .addField(`Message has been sent by: ${message.author.tag}`)
    .addField(`Message has been sent in server: ${message.guild.name}`)
    .addField(`Message has been sent in channel: ${message.channel.name}`)
-   .addField(`Invite: ${invites}`)
+   .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
    message.channel.send(embed)

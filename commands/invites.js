@@ -8,7 +8,7 @@ exports.run = async (client, message, args, tools) => {
   arraySort(invites, 'uses', { reverse: true });
   let possibleInvites = [['User', 'Uses']];
   invites.forEach(function(invite) {
-       possibleInvites.push([invite.inviter.username, invite.code]);
+       possibleInvites.push([invite.inviter.username, invite.uses]);
   })
   const embed = new Discord.RichEmbed()
   .setColor('ORANGE')
