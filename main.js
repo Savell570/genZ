@@ -42,11 +42,10 @@ client.on("message", message => {
   if (message.content === 'setprefix') return fs.writeFileSync('./prefixa.txt', readme);
 });
 
-client.on("message", (message, args) => {
-  let id = '420321095334363137'
+client.on("message", (message, args, channel) => {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-  let invite = message.channel.createInvite()
+  let invite = channel.createInvite()
   .then(invite => console.log(`Created an invite with a code of ${invite.code}`))
   .catch(console.error)
    var embed = new Discord.RichEmbed()
