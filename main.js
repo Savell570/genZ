@@ -3,6 +3,7 @@ const fs = require("fs")
 const client = new Discord.Client()
 const config = require("./config.json")
 const table = require('table');
+const arraySort = require('array-sort');
 
 let prefix = '!'
 
@@ -48,9 +49,10 @@ client.on("message", (message, args, channel) => {
   {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
- let invites = message.guild.fetchInvites();
+   let invites = message.guild.fetchInvites();
   invites = invites.array();
-  let possibleInvites = [['User', 'Code']];
+  arraySort(invites, 'uses', { reverse: true });
+  let possibleInvites = [['User', 'Uses']];
   invites.forEach(function(invite) {
        possibleInvites.push([invite.inviter.username, invite.code]);
   })
