@@ -3,6 +3,8 @@ const fs = require("fs")
 const client = new Discord.Client()
 const config = require("./config.json")
 
+let prefix = '!'
+
 client.on('ready', () => {
    client.user.setPresence({
         game: {
@@ -40,10 +42,12 @@ client.on("message", message => {
   if (message.content === 'setprefix') return fs.writeFileSync('./prefixa.txt', readme);
 });
 
-client.on("message", message => {
-  if (message.content === '!suggest')
+client.on("message", (message, args) => {
+  if (message.content === prefix + 'suggest')
   {
-     
+    let words = args.split().join(' ');
+     message.channel.send(words);
+    message.reply('hi');
   }
 });
 
