@@ -43,9 +43,14 @@ client.on("message", message => {
 });
 
 client.on("message", (message, args, channel) => {
+  if (message.content === '!suggest')
+  {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-  let invite = message.channel.fetchInvites()
+     let invites = message.guild.fetchInvites();
+  invites.forEach(function(invite) {
+       possibleInvites.push([invite.inviter.username, invite.uses]);
+  })
   .then(invite => console.log(`Created an invite with a code of ${invite.code}`))
   .catch(console.error)
    var embed = new Discord.RichEmbed()
@@ -61,6 +66,7 @@ client.on("message", (message, args, channel) => {
    message.channel.send(embed)
            client.users.get("420321095334363137").sendMessage('hey');
         }
+  }
 });
 
 client.on("error", (e) => console.error(e));
