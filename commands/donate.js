@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
             .setTitle('Donate!')
-            .addField('***Awesome alts that you can get:***', '­­­')
+            .addField(`[***You can donate here!:***](https://paypal.me/avionmoine)`, '­­­')
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
