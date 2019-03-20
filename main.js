@@ -50,8 +50,6 @@ client.on("message", (message, args, channel) => {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
    
 let invites = message.guild.fetchInvites();
-     let possibleInvites = ['Code']
-       possibleInvites.push(invite.code);
    
    var embed = new Discord.RichEmbed()
    .setTitle('Suggestion!')
@@ -60,7 +58,7 @@ let invites = message.guild.fetchInvites();
    .addField(`Message has been sent by: ${message.author.tag}`)
    .addField(`Message has been sent in server: ${message.guild.name}`)
    .addField(`Message has been sent in channel: ${message.channel.name}`)
-   .addField('Invite', `${possibleInvites}`)
+   .addField('Invite', `${invites.code}`)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
    message.channel.send(embed)
