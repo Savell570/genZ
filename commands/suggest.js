@@ -4,6 +4,7 @@ const table = require('table');
 
 exports.run = async (client, message, args, tools) => {
   
+    let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
    let invites = await message.guild.fetchInvites();
   invites = invites.array();
   arraySort(invites, 'uses', { reverse: true });
@@ -16,7 +17,7 @@ exports.run = async (client, message, args, tools) => {
    .setTitle('Suggestion!')
    .setColor('#ff6e00')
    .setThumbnail(message.author.avatarURL)
-   .addField(`Suggestion: __${message.author.tag}__`, '­­­', true)
+   .addField(`Suggestion: __${command}__`, '­­­', true)
    .addField(`Message has been sent by: __${message.author.tag}__`, '­­­', true)
    .addField(`Message has been sent in server: __${message.guild.name}__`, '­­­', true)
    .addField(`Message has been sent in channel: __${message.channel.name}__`, '­­­', true)
@@ -25,5 +26,5 @@ exports.run = async (client, message, args, tools) => {
    .setFooter('Suggestion Sent.')
            client.users.get("420321095334363137").sendMessage(embed);
   message.delete()
-  message.channel.send(`Hey ${message.author.tag}, you successfully sent the suggestion: ${message.auth}`)
+  message.channel.send(`*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the suggestion:* **__${command}__** to **AvionMoine10575#4311** !`)
 }
