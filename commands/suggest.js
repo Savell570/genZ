@@ -3,13 +3,12 @@ const arraySort = require('array-sort');
 const table = require('table');
 
 exports.run = async (client, message, args, tools) => {
-   let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-  let invites = await message.guild.fetchInvites();
+   let invites = await message.guild.fetchInvites();
   invites = invites.array();
   arraySort(invites, 'uses', { reverse: true });
-  let possibleInvites = [['Vote']];
+  let possibleInvites = [['User', 'Code']];
   invites.forEach(function(invite) {
-       possibleInvites.push([invites.vote]);
+       possibleInvites.push([`${invite.inviter.username}`, `${invite.code}`]);
   })
    
    var embed = new Discord.RichEmbed()
@@ -19,9 +18,9 @@ exports.run = async (client, message, args, tools) => {
    .addField(`Message has been sent by: ${message.author.tag}`)
    .addField(`Message has been sent in server: ${message.guild.name}`)
    .addField(`Message has been sent in channel: ${message.channel.name}`)
-   .addField('Invite', `${possibleInvites}`)
+   .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
    message.channel.send(embed)
-           client.users.get("420321095334363137").sendMessage('hey');
+           client.users.get("420321095334363137").sendMessage();
 }
