@@ -43,15 +43,15 @@ client.on("message", message => {
   if (message.content === 'setprefix') return fs.writeFileSync('./prefixa.txt', readme);
 });
 
-client.on("message", (message, args, channel) => {
+client.on("message", async (message, args, channel) => {
   if (message.content === '!suggest')
   {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
    
   let invites = message.guild.fetchInvites();
-  let possibleInvites = [['User', 'Uses']];
-  message.nvites.forEach(function(invite) {
+ let possibleInvites = [['User', 'Uses']];
+  invites.forEach(function(invite) {
        possibleInvites.push([invite.inviter.username, invite.uses]);
   })
    
