@@ -44,7 +44,7 @@ client.on("message", message => {
 });
 
 client.on("message", async (message, args, channel) => {
-  if (message.content === '!suggest')
+  if (message.content === '!sugest')
   {
  if(message.content[0] === prefix) {
             let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
