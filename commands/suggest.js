@@ -7,9 +7,9 @@ exports.run = async (client, message, args, tools) => {
   let invites = await message.guild.fetchInvites();
   invites = invites.array();
   arraySort(invites, 'uses', { reverse: true });
-  let possibleInvites = [['User', 'Uses']];
+  let possibleInvites = [['Vote']];
   invites.forEach(function(invite) {
-       possibleInvites.push([invite.inviter.username, invite.uses]);
+       possibleInvites.push([invites.vote]);
   })
    
    var embed = new Discord.RichEmbed()
