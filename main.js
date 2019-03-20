@@ -51,7 +51,7 @@ client.on("message", (message, args, channel) => {
    
   let invites = message.guild.fetchInvites();
   let possibleInvites = [['User', 'Uses']];
-  invites.forEach(async function(invite) {
+  message.nvites.forEach(function(invite) {
        possibleInvites.push([invite.inviter.username, invite.uses]);
   })
    
