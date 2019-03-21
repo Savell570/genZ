@@ -8,7 +8,7 @@ require('moment-duration-format');
 
 let prefix = '!'
 
-var guildConf = require('./storages/guildConf.json');
+const guildConf = require("./guildConf.json");
 
 client.on('ready', () => { // If the Bot went on, proceed
     console.log('I\'m Online!');
@@ -68,12 +68,12 @@ client.on("message", message => {
     } catch (err) {
         console.error(err);
     }
-       if (command === "prefix") {
+       if (message.content === prefix + "prefix") {
 	guildConf[message.guild.id].prefix = args[0];
 	if (!guildConf[message.guild.id].prefix) {
 		guildConf[message.guild.id].prefix = config.prefix; // If you didn't specify a Prefix, set the Prefix to the Default Prefix
 	}
-     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     fs.writeFile('./guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
      	if (err) console.log(err)
 	})
   }
