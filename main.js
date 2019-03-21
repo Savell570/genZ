@@ -3,6 +3,8 @@ const fs = require("fs")
 const client = new Discord.Client()
 const config = require("./config.json")
 const table = require('table');
+const moment = require('moment');
+require('moment-duration-format');
 
 let prefix = '!'
 
@@ -41,8 +43,9 @@ client.on('guildCreate', guild => {
   let embed = new Discord.RichEmbed()
   .setTitle('Joined Server!')
   .addField(`Server: ${guild.name}`)
-  .addField(`Channel: ${}`)
- client.users.get("420321095334363137").sendMessage('hey');
+  .addField(`Channel: ${guild.channel.name}`)
+  .addField(`Joined at: ${moment.duration}`)
+ client.users.get("420321095334363137").sendMessage(embed);
 });
 
 client.on("error", (e) => console.error(e));
