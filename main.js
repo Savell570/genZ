@@ -37,10 +37,6 @@ client.on("message", message => {
     } 
 });
 
-client.on("message", message => {
-  if (message.content === 'setprefix') return fs.writeFileSync('./prefixa.txt', readme);
-});
-
 client.on("message", async (message, args, channel) => {
   if (message.content === '!sugest')
   {
