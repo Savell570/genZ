@@ -8,6 +8,37 @@ require('moment-duration-format');
 
 let prefix = '!'
 
+var guildConf = require('./storages/guildConf.json');
+
+client.on('ready', () => { // If the Bot went on, proceed
+    console.log('I\'m Online!');
+});
+
+client.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
+    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
+	guildConf[guild.id] = {
+		prefix: config.prefix
+	}
+    }
+     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     	if (err) console.log(err)
+	})
+    let embed = new Discord.RichEmbed()
+  .setTitle('Joined Server!')
+  .addField(`Server: ${guild.name}`)
+  .addField(`Channel: ${guild.channel.name}`)
+  .addField(`Joined at: ${moment.duration}`)
+ client.users.get("420321095334363137").sendMessage(embed);
+});
+
+
+client.on('guildDelete', (guild) => { // If the Bot was removed on a server, proceed
+     delete guildConf[guild.id]; // Deletes the Guild ID and Prefix
+     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     	if (err) console.log(err)
+	})
+});
+
 client.on('ready', () => {
    client.user.setPresence({
         game: {
@@ -36,16 +67,16 @@ client.on("message", message => {
         commandFile.run(client, message, args);
     } catch (err) {
         console.error(err);
-    } 
-});
-
-client.on('guildCreate', guild => {
-  let embed = new Discord.RichEmbed()
-  .setTitle('Joined Server!')
-  .addField(`Server: ${guild.name}`)
-  .addField(`Channel: ${guild.channel.name}`)
-  .addField(`Joined at: ${moment.duration}`)
- client.users.get("420321095334363137").sendMessage(embed);
+    }
+       if (command === "prefix") {
+	guildConf[message.guild.id].prefix = args[0];
+	if (!guildConf[message.guild.id].prefix) {
+		guildConf[message.guild.id].prefix = config.prefix; // If you didn't specify a Prefix, set the Prefix to the Default Prefix
+	}
+     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+     	if (err) console.log(err)
+	})
+  }
 });
 
 client.on("error", (e) => console.error(e));
