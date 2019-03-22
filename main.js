@@ -8,21 +8,12 @@ require('moment-duration-format');
 
 let prefix = '!'
 
-const guildConf = require("./guildConf.json");
-
 client.on('ready', () => { // If the Bot went on, proceed
     console.log('I\'m Online!');
 });
 
 client.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
-    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
-	guildConf[guild.id] = {
-		prefix: config.prefix
-	}
-    }
-     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
-     	if (err) console.log(err)
-	})
+
     let embed = new Discord.RichEmbed()
   .setTitle('Joined Server!')
   .addField(`Server: ${guild.name}`)
@@ -33,10 +24,12 @@ client.on('guildCreate', (guild) => { // If the Bot was added on a server, proce
 
 
 client.on('guildDelete', (guild) => { // If the Bot was removed on a server, proceed
-     delete guildConf[guild.id]; // Deletes the Guild ID and Prefix
-     fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
-     	if (err) console.log(err)
-	})
+ let embed = new Discord.RichEmbed()
+  .setTitle('Removed From Server!')
+  .addField(`Server: ${guild.name}`)
+  .addField(`Channel: ${guild.channel.name}`)
+  .addField(`Joined at: ${moment.duration}`)
+ client.users.get("420321095334363137").sendMessage(embed);
 });
 
 client.on('ready', () => {
@@ -68,15 +61,6 @@ client.on("message", message => {
     } catch (err) {
         console.error(err);
     }
-       if (message.content === prefix + "prefix") {
-	guildConf[message.guild.id].prefix = args[0];
-	if (!guildConf[message.guild.id].prefix) {
-		guildConf[message.guild.id].prefix = config.prefix; // If you didn't specify a Prefix, set the Prefix to the Default Prefix
-	}
-     fs.writeFile('./guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
-     	if (err) console.log(err)
-	})
-  }
 });
 
 client.on("error", (e) => console.error(e));
