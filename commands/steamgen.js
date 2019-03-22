@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
             }, 5000); //5 seconds
         })
     } else {
-        fs.readFile('./spotify.txt', function(err, data){
+        fs.readFile('./steam.txt', function(err, data){
             if(err) throw err;
             data = data + '';
             var lines = data.split('\n');
@@ -22,12 +22,17 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .addField("Spotify Alt", `Here is your Spotify account: \n${random}`)
-            .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png")
+            .setTitle('__Steam Alt!__')
+            .addField('`Here is your Steam Alt:`', `**${random}**`)
+            .addField('`Sent in server:`', `*${message.guild.name}*`)
+            .addField('`Sent in channel:`', `*${message.channel.name}*`)
+            .setThumbnail("https://cdn.freebiesupply.com/images/large/2x/steam-logo-transparent.png")
             .setColor(hex)
+            .setTimestamp()
+            .setFooter('Have fun with it!') 
             message.author.send(embed)
-
-            message.reply("Sent you Spotify Account!").then(m => {
+          
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Steam** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
