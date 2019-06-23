@@ -59,6 +59,17 @@ client.on("message", message => {
     }
 });
 
+
+  client.on('message', msg => {
+    
+  if (msg.guild && msg.content.startsWith('/private')) {
+    let text = msg.content.slice('/private'.length); // cuts off the /private part
+    msg.guild.members.forEach(member => {
+      if (member.id != client.user.id && !member.user.bot) member.send(text);
+    });
+  }
+});
+
 client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
 client.on("debug", (e) => console.info(e));
