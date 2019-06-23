@@ -22,6 +22,18 @@ client.on('guildCreate', (guild) => { // If the Bot was added on a server, proce
  client.users.get("420321095334363137").sendMessage(embed);
 });
 
+client.on('ready', () => {
+    client.user.setStatus('available')
+    client.user.setPresence({
+        game: {
+            name: 'fun',
+            type: "PLAYING"
+        }
+    });
+
+});
+
+
 
 client.on('guildDelete', (guild) => { // If the Bot was removed on a server, proceed
  let embed = new Discord.RichEmbed()
@@ -30,22 +42,6 @@ client.on('guildDelete', (guild) => { // If the Bot was removed on a server, pro
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
  client.users.get("420321095334363137").sendMessage(embed);
-});
-
-client.on('ready', () => {
-   client.user.setPresence({
-        game: {
-            name: `Over ${client.guilds.size} servers! | ${config.status}`,
-            type: "WATCHING"
-        }
-   })
-
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-   console.log(`You can invite this bot to your server with this link: https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-
 });
 
 client.on("message", message => {

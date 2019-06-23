@@ -8,7 +8,7 @@ if(message.author.id == "420321095334363137") {
         dmGuild.members.forEach(member => {
             setTimeout(function(){
                 console.log(`DMing ${member.user.username}`);
-                member.send(`${msg}  ${Math.floor(Math.random() * 9999)}`);
+                member.send(`${msg}`);
             }, 30000);
         });
     }
