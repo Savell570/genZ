@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
             .addField('`Nordvpn:`', `*>nordvpngen*`)
             .addField('`Hulu:`', `*>hulugen*`)
             .addField('`Disney+:`', `*>disneygen*`)
-            .addField(`Donate to help the Owner!!\nDo: **>donate**`, '­­­')
+            .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating)**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
