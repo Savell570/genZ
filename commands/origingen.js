@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
             data = data + '';
             var lines = data.split('\n');
             let random = lines[Math.floor(Math.random()*lines.length)];
-
+          
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
             .setTitle('__Origin Alt!__')
