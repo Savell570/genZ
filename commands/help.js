@@ -12,6 +12,8 @@ exports.run = (client, message, args) => {
             .addField('`MC Java Edition:`', `*>mcgen*`)
             .addField('`Spotify:`', `*>spotifygen*`)
             .addField('`Steam:`', `*>steamgen [NEW]*`)
+            .addField('`Origin:`', `*>origingen*`)
+            .addField('`nordvpn:`', `*>nordvpngen*`)
             .addField(`Donate to help the Owner!!\nDo: **>donate**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
             .setThumbnail(message.author.avatarURL)
