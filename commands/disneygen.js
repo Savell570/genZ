@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
             .addField('`Here is your NordVPN Alt:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("http://www.blocksandgold.com//media/catalog/product/cache/3/image/200x/6cffa5908a86143a54dc6ad9b8a7c38e/g/r/grass.png")
+            .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.j6Ue1697V7mWU-J0ob8fGQHaFG&pid=Api&P=0&w=237&h=164")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!')
