@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     message.delete(message)
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('__Help Command!__')
+            .setTitle('__Stock Command!__')
             .addField('***Awesome alts that you can get:***', '­­­')
             .addField('`MC Java Edition:`', `*>mcgen*`)
             .addField('`Spotify:`', `*>spotifygen*`)
@@ -16,8 +16,6 @@ exports.run = (client, message, args) => {
             .addField('`Nordvpn:`', `*>nordvpngen*`)
             .addField('`Hulu:`', `*>hulugen*`)
             .addField('`Disney+:`', `*>disneygen*`)
-            .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating)**`, '­­­')
-            .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
