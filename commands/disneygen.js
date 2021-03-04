@@ -5,7 +5,7 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-        fs.readFile('./nordvpn.txt', function(err, data){
+        fs.readFile('./disney.txt', function(err, data){
             if(err) throw err;
             data = data + '';
             var lines = data.split('\n');
@@ -13,8 +13,8 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('__NordVPN Alt!__')
-            .addField('`Here is your NordVPN Alt:`', `**${random}**`)
+            .setTitle('__Disney Alt!__')
+            .addField('`Here is your Disney Alt:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
             .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.j6Ue1697V7mWU-J0ob8fGQHaFG&pid=Api&P=0&w=237&h=164")
@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
             .setFooter('Have fun with it!')
             message.author.send(embed)
 
-            message.reply(`Hey **${message.author.tag}**, I __successfully__ set *your* **NordVPN** Alt in DMS!`).then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ set *your* **Disney** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
