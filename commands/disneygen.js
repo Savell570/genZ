@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
             .addField('`Here is your Disney Alt:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.j6Ue1697V7mWU-J0ob8fGQHaFG&pid=Api&P=0&w=237&h=164")
+            .setThumbnail("https://cdn.discordapp.com/attachments/816788275149668382/817137950101340200/image0.png")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!')
