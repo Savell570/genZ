@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
             .addField('`Mailaccess:`', `*>mailaccessgen*`)
             .addField('Crunchyroll:', `*>crunchyrollgen*`)
             
-            .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating)**`, '­­­')
+            .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating) DO NOT USE A TEXT FILE**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
             .addField(`To see my stock\nDo: **>stock**`, '­­­')
             .addField(`✔️Click Here For The Support **__Server__**!`, `[***Here!!***](https://discord.gg/wAnAEkaVnt)`, true)
