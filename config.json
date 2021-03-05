@@ -2,5 +2,5 @@
 
     "prefix": ">",
     "status": ">help",
-    "cooldown": "3"
+    "cooldown": "100"
 }
