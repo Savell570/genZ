@@ -22,8 +22,8 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('__Mailaccess Alt!__')
-            .addField('`Here is your Mailaccess Alt:`', `**${random}**`)
+            .setTitle('__Crunchyroll Alt!__')
+            .addField('`Here is your Crunchyroll Alt:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
             .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.mQiRjfCSpRXE3PwFpTAqUwHaFj&pid=Api&P=0&w=228&h=172")
@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
             .setFooter('Have fun with it!')
             message.author.send(embed)
 
-            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Mailaccess** Alt in DMS!`).then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Crunchyroll** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
