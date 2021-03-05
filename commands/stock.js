@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
             let embed = new Discord.RichEmbed()
             .setTitle('__genZ stock 🍎__')
             .addField('`MC Java Edition:`', `*In stock :green_circle:*`)
-           .addField('`spotify :`', `*Low stock :orange_circle:*`)
+           .addField('`spotify:`', `*Low stock :orange_circle:*`)
             .addField('`Steam:`', `*In stock :green_circle:*`)
             .addField('`Origin:`', `*Low stock :orange_circle:*`)
             .addField('`Nordvpn:`', `*In stock :green_circle:*`)

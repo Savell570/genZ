@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
             .addField('`Hulu:`', `*>hulugen*`)
             .addField('`Disney+:`', `*>disneygen*`)
             .addField('`Mailaccess:`', `*>mailaccessgen*`)
-            .addField('Crunchyroll:', `*>crunchyrollgen free*`)
+            .addField('Crunchyroll:', `*>crunchyrollgen*`)
             
             .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating)**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
