@@ -15,6 +15,8 @@ exports.run = (client, message, args) => {
             .addField('`Nordvpn:`', `*In stock :green_circle:*`)
             .addField('`Hulu:`', `*In stock :green_circle:*`)
             .addField('`Disney+:`', `*In stock :green_circle:*`)
+            .addField('`Mailaccess:`', `*In stock :green_circle:*`)
+            .addField('`crunchyroll:`', `*In stock :green_circle:*`)
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
