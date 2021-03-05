@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
             .addField('`Here is your Crunchyroll Alt:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.mQiRjfCSpRXE3PwFpTAqUwHaFj&pid=Api&P=0&w=228&h=172")
+            .setThumbnail("https://cdn.discordapp.com/attachments/816788275149668382/817354557889052722/image0.jpg")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!')

@@ -17,10 +17,11 @@ exports.run = (client, message, args) => {
             .addField('`Hulu:`', `*>hulugen*`)
             .addField('`Disney+:`', `*>disneygen*`)
             .addField('`Mailaccess:`', `*>mailaccessgen*`)
-            .addField('Crunchyroll:', `*>crunchyrollgen*`)
+            .addField('Crunchyroll:', `*>crunchyrollgen free*`)
+            
             .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating)**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')
-            .addField('`to see my stock do:`', `*>stock*`)
+            .addField(`To see my stock\nDo: **>stock**`, '­­­')
             .addField(`✔️Click Here For The Support **__Server__**!`, `[***Here!!***](https://discord.gg/wAnAEkaVnt)`, true)
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
