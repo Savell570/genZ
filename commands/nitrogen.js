@@ -5,7 +5,7 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-        fs.readFile('./nordvpn.txt', function(err, data){
+        fs.readFile('./nitro.txt', function(err, data){
             if(err) throw err;
             data = data + '';
             var lines = data.split('\n');
@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
             .addField('`Here is your Nitro Code:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.j6Ue1697V7mWU-J0ob8fGQHaFG&pid=Api&P=0&w=237&h=164")
+            .setThumbnail("https://support.discord.com/hc/article_attachments/360013500032/nitro_gif.gif")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!')
