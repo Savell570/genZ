@@ -6,7 +6,7 @@ const table = require('table');
 const moment = require('moment');
 require('moment-duration-format');
 
-let prefix = '!'
+let prefix = '>'
 
 client.on('ready', () => { // If the Bot went on, proceed
     console.log('I\'m Online!');
@@ -26,8 +26,8 @@ client.on('ready', () => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: 'fun',
-            type: "PLAYING"
+            name: '>help',
+            type: "WATCHING"
         }
     });
 
