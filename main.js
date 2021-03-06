@@ -6,7 +6,7 @@ const table = require('table');
 const moment = require('moment');
 require('moment-duration-format');
 
-let prefix = '>'
+let prefix = '!'
 
 client.on('ready', () => { // If the Bot went on, proceed
     console.log('I\'m Online!');
@@ -26,8 +26,8 @@ client.on('ready', () => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: '>help',
-            type: "WATCHING"
+            name: 'fun',
+            type: "PLAYING"
         }
     });
 
@@ -41,7 +41,7 @@ client.on('guildDelete', (guild) => { // If the Bot was removed on a server, pro
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("813300649738502154").sendMessage(embed);
+ client.users.get("420321095334363137").sendMessage(embed);
 });
 
 client.on("message", message => {
@@ -74,5 +74,6 @@ client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
 client.on("debug", (e) => console.info(e));
 
-client.login(process.env.TOKEN)
+
+client.login(process.env.TOKEN);
 
