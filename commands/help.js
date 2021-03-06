@@ -18,6 +18,7 @@ exports.run = (client, message, args) => {
             .addField('`Disney+:`', `*>disneygen*`)
             .addField('`Mailaccess:`', `*>mailaccessgen*`)
             .addField('Crunchyroll:', `*>crunchyrollgen*`)
+            .addField('Nitro:', `*>nitro*`)
             
             .addField(`Donate to help the Owner!!\nDo: **>donate (the account name) (the accounts your donating) DO NOT USE A TEXT FILE**`, '­­­')
             .addField(`You can suggest your accounts idea!\nDo: **>suggest [alts idea]**`, '­­­')

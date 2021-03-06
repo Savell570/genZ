@@ -17,6 +17,7 @@ exports.run = (client, message, args) => {
             .addField('`Disney+:`', `*In stock :green_circle:*`)
             .addField('`Mailaccess:`', `*In stock :green_circle:*`)
             .addField('`crunchyroll:`', `*In stock :green_circle:*`)
+            .addField('`nitro:`', `*Low stock :green_circle:*`)
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()
