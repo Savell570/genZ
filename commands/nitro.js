@@ -64,10 +64,4 @@ Player.on('message', (message) => {
     if (message.author.bot) return;
     const args = message.content.split(/ +/g);
     const command = args.shift().toLowerCase();
-
-    if(command === `!dm ` + `${player.user.tag}` + `${message.content}`) {
-        message.Player.sendMessage(`-${message.author}` + "\n" + 
-`${message.content}`);
-    }
-
- });
+});
