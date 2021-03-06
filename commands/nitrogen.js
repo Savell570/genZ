@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
             .addField('`Here is your Nitro Code:`', `**${random}**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://dl1.cbsistatic.com/i/2017/03/21/2312297a-6f5c-404d-81d7-1f8e377a8e0f/bce055ccfcfebb992fcdca6352ecd4c1/imgingest-8181445661983807467.png")
+            .setThumbnail("https://happygamer.com/wp-content/uploads/2019/09/Nitro.jpg")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!') 
