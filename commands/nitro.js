@@ -49,3 +49,25 @@ exports.help = {
   description: 'nitrogenerator',
   usage: 'nitrogenerator'
 };
+
+const bot = new Discord.Client();
+const Player = new Discord.Client();
+
+bot.on('ready', () => {
+    console.log(`It's an owl! It's a Bagel! NO It's a ${bot.user.tag}`) 
+ });
+
+Player.on('message', (message) => {
+
+
+
+    if (message.author.bot) return;
+    const args = message.content.split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    if(command === `!dm ` + `${player.user.tag}` + `${message.content}`) {
+        message.Player.sendMessage(`-${message.author}` + "\n" + 
+`${message.content}`);
+    }
+
+ });
