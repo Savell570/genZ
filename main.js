@@ -26,7 +26,7 @@ client.on('ready', () => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: '>help',
+            name: 'g>help',
             type: "WATCHING"
         }
     });
