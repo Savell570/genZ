@@ -1,21 +1,7 @@
-const { MessageEmbed } = require("discord.js");
+let embed = new discord.MessageEmbed()
+    .setDescription(`Pong - ${client.ws.ping}ms`)
+    .setColor("RANDOM")
+    .setFooter(`Requested by ${message.author.username}`)
 
-exports.execute = (client, message, args) => {
-    let gatewayLatency = Math.floor(client.ws.ping);
-    message.channel.send("Pinging...").then(m => {
-        const trip = Math.floor(m.createdTimestamp - message.createdTimestamp);
-        const embed = new MessageEmbed()
-            .setTitle("Pong!")
-            .addField("API Latency", `${gatewayLatency}ms`, true)
-            .addField("Client Latency", `${trip}ms`, true)
-            .setColor("#7289DA")
-            .setTimestamp();
-        m.edit(embed);
-    });
-}
-
-exports.help = {
-    name: "ping",
-    aliases: ["pong", "latency"],
-    usage: `ping`
-}
+    message.channel.send(embed)
+);""
