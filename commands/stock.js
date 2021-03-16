@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
             .setTitle('__genZ stock 🍎__')
-            .addField('`MC Java Edition:`', `*In stock :green_circle:*`)
+            .addField('`MC Java Edition:`', `*Out Of stock 🔴*`)
            .addField('`spotify:`', `*Low stock :orange_circle:*`)
             .addField('`Steam:`', `*In stock :green_circle:*`)
             .addField('`Origin:`', `*Low stock :orange_circle:*`)
