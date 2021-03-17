@@ -14,17 +14,17 @@ exports.run = async (client, message, args, tools) => {
   })
    
    var embed = new Discord.RichEmbed()
-   .setTitle('donation!')
+   .setTitle('Suggestion!')
    .setColor('#ff6e00')
    .setThumbnail(message.author.avatarURL)
-   .addField(`donation: __${command}__`, '­­­', true)
+   .addField(`Suggestion: __${command}__`, '­­­', true)
    .addField(`Message has been sent by: __${message.author.tag}__`, '­­­', true)
    .addField(`Message has been sent in server: __${message.guild.name}__`, '­­­', true)
    .addField(`Message has been sent in channel: __${message.channel.name}__`, '­­­', true)
    .addField('­­­', `\`\`\`${table.table(possibleInvites)}\`\`\``, true)
    .setTimestamp()
    .setFooter('Suggestion Sent.')
-           client.users.get("813300649738502154").sendMessage(embed);
+           client.users.get("420321095334363137").sendMessage(embed);
   message.delete()
-  message.channel.send(`*Hey* **__${message.author.tag}__**, *you* **successfully** sent the donation to **retard wearing ninja shoes#1377** !`)
+  message.channel.send(`*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the suggestion:* **__${command}__** to **AvionMoine10575#4311** !`)
 }

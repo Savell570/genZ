@@ -19,7 +19,7 @@ client.on('guildCreate', (guild) => { // If the Bot was added on a server, proce
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("420321095334363137").sendMessage(embed);
+ client.users.get("813300649738502154").sendMessage(embed);
 });
 
 client.on('ready', () => {
@@ -41,7 +41,7 @@ client.on('guildDelete', (guild) => { // If the Bot was removed on a server, pro
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("420321095334363137").sendMessage(embed);
+ client.users.get("813300649738502154").sendMessage(embed);
 });
 
 client.on("message", message => {
