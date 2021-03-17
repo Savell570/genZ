@@ -20,8 +20,8 @@ exports.run = (client, message, args) => {
             .addField('Crunchyroll:', `*g.crunchyrollgen*`)
             .addField('Nitro:', `*g.nitrogen*`)
             
-            .addField(`Donate to help the Owner!!\nDo: **g.donate (the account name) (the accounts your donating) DO NOT USE A TEXT FILE**`, '­­­')
-            .addField(`You can suggest your accounts idea!\nDo: **g.suggest [alts idea]**`, '­­­')
+            .addField(`Donate to help the Owner!!\nDo: **g.donate** `, '­­­')
+            .addField(`You can suggest your accountd ideas!\nDo: **>suggest**`, '­­­')
             .addField(`To see my stock\nDo: **g.stock**`, '­­­')
             .addField(`✔️Click Here For The Support **__Server__**!`, `[***Here!!***](https://discord.gg/wAnAEkaVnt)`, true)
             .setThumbnail(message.author.avatarURL)
