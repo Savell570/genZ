@@ -41,7 +41,7 @@ exports.run = (client, message, args) => {
             talkedRecently.add(message.author.id);
             setTimeout(() => {
                 talkedRecently.delete(message.author.id);
-            }, config.cooldown * 60 *1000);
+            }, config.cooldown * 0 *1000);
 
         })
     }
