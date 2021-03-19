@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
             .addField('`MC Java Edition:`', `*Out Of stock 🔴*`)
            .addField('`spotify:`', `*Low stock :orange_circle:*`)
             .addField('`Steam:`', `*In stock :green_circle:*`)
-            .addField('`Origin:`', `*Low stock :orange_circle:*`)
+            .addField('`Origin:`', `*In stock :green_circle:*`)
             .addField('`Nordvpn:`', `*In stock :green_circle:*`)
             .addField('`Hulu:`', `*In stock :green_circle:*`)
             .addField('`Disney+:`', `*In stock :green_circle:*`)
