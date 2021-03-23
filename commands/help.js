@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
             .addField(`Donate to help the Owner!!\nDo: **g.donate** `, '­­­')
             .addField(`You can suggest your accountd ideas!\nDo: **>suggest**`, '­­­')
             .addField(`To see my stock\nDo: **g.stock**`, '­­­')
-            .addField(`✔️Click Here For The Support **__Server__**!`, `[***Here!!***](https://dsc.gg/genz-rewards)`, true)
+            .addField(`✔️Click Here For The Support **__Server__**!`, `[***Here!!***](https://discord.gg/wAnAEkaVnt)`, true)
             .setThumbnail(message.author.avatarURL)
             .setColor(hex)
             .setTimestamp()

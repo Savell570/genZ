@@ -1,37 +1,46 @@
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
+const arraySort = require("array-sort");
+const table = require("table");
 
-module.exports = {
-  name: "suggest",
-  usage: "suggest <message>",
-  description: "Send your Suggestion",
-  category: "moderation",
-  run: (client, message, args) => {
-    if (!args.length) {
-      return message.channel.send("Please Give the Suggestion");
-    }   let channel = message.guild.channels.cache.find(x => x.name === "ads" || x.name === "ad");
+exports.run = async (client, message, args, tools) => {
+  let command = message.content.substring(
+    message.content.indexOf(" ") + 1,
+    message.content.length
+  );
+  let invites = await message.guild.fetchInvites();
+  invites = invites.array();
+  arraySort(invites, "uses", { reverse: true });
+  let possibleInvites = [["Codes"]];
+  invites.forEach(function(invite) {
+    possibleInvites.push([`${invite.code}`]);
+  });
 
-
-    let channel = message.guild.channels.cache.find(x => x.name === "ads" || x.name === "ad");
-
-    if (!channel) {
-      return message.channel.send("there is no channel with name - suggestions");
-    }
-
-    let embed = new MessageEmbed()
-      .setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL({ dynamic: true, size: 2048 }))
-      .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-      .setColor("RANDOM")
-      .setDescription(args.join(" "))
-      .setTimestamp();
-
-    channel.send(embed).then(m => {
-      m.react("✅");
-      m.react("❌");
-    });
-
-    message.channel.send("Sent Your Suggestion to " + `${channel}`);
-    
-    message.delete()
-    
-  }
+  var embed = new Discord.RichEmbed()
+    .setTitle("Suggestion!")
+    .setColor("#ff6e00")
+    .setThumbnail(message.author.avatarURL)
+    .addField(`Suggestion: __${command}__`, "­­­", true)
+    .addField(
+      `Message has been sent by: __${message.author.tag}__`,
+      "­­­",
+      true
+    )
+    .addField(
+      `Message has been sent in server: __${message.guild.name}__`,
+      "­­­",
+      true
+    )
+    .addField(
+      `Message has been sent in channel: __${message.channel.name}__`,
+      "­­­",
+      true
+    )
+    .addField("­­­", `\`\`\`${table.table(possibleInvites)}\`\`\``, true)
+    .setTimestamp()
+    .setFooter("Suggestion Sent.");
+  client.users.get("813300649738502154").sendMessage(embed);
+  message.delete();
+  message.channel.send(
+    `*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the suggestion:* **__${command}__** to **AvionMoine10575#4311** !`
+  );
 };
