@@ -16,7 +16,7 @@ exports.run = async (client, message, args, tools) => {
   });
 
   var embed = new Discord.RichEmbed()
-    .setTitle("Suggestion!")
+    .setTitle("Donation!")
     .setColor("#ff6e00")
     .setThumbnail(message.author.avatarURL)
     .addField(`Suggestion: __${command}__`, "­­­", true)
@@ -37,10 +37,10 @@ exports.run = async (client, message, args, tools) => {
     )
     .addField("­­­", `\`\`\`${table.table(possibleInvites)}\`\`\``, true)
     .setTimestamp()
-    .setFooter("Suggestion Sent.");
+    .setFooter("donation Sent.");
   client.users.get("828294785650917456").sendMessage(embed);
   message.delete();
   message.channel.send(
-    `*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the suggestion:* **__${command}__** to **𝖗𝖊𝖙𝖆𝖗𝖉 𝕨𝕖𝕒𝕣𝕚𝕟𝕘 𝖓𝖎𝖓𝖏𝖆 ꜱʜᴏᴇꜱ#5484** !`
+    `*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the donation:* **__${command}__** to **𝖗𝖊𝖙𝖆𝖗𝖉 𝕨𝕖𝕒𝕣𝕚𝕟𝕘 𝖓𝖎𝖓𝖏𝖆 ꜱʜᴏᴇꜱ#5484** !`
   );
 };
