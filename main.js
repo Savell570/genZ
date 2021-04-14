@@ -41,7 +41,7 @@ client.on('guildDelete', (guild) => { // If the Bot was removed on a server, pro
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("813300649738502154").sendMessage(embed);
+ client.users.get("828294785650917456").sendMessage(embed);
 });
 
 client.on("message", message => {
