@@ -1,3 +1,4 @@
+
 const Discord = require("discord.js")
 const fs = require("fs")
 const client = new Discord.Client()
@@ -19,14 +20,14 @@ client.on('guildCreate', (guild) => { // If the Bot was added on a server, proce
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("813300649738502154").sendMessage(embed);
+ client.users.get("843156417238401075").sendMessage(embed);
 });
 
 client.on('ready', () => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: 'g.help',
+            name: '>help',
             type: "WATCHING"
         }
     });
@@ -41,7 +42,7 @@ client.on('guildDelete', (guild) => { // If the Bot was removed on a server, pro
   .addField(`Server: ${guild.name}`)
   .addField(`Channel: ${guild.channel.name}`)
   .addField(`Joined at: ${moment.duration}`)
- client.users.get("828294785650917456").sendMessage(embed);
+ client.users.get("843156417238401075").sendMessage(embed);
 });
 
 client.on("message", message => {

@@ -15,12 +15,9 @@ function msToTime(s) {
 module.exports.run = async (client, message, args) => {
 const info = new Discord.RichEmbed()
 .setColor("0064FF")
-.setTitle("GenZ Info")
-.addField("Uptime",msToTime(client.uptime), true)
-.addField(`GenZ has joined`, ` **${client.guilds.size}** server(s)`, true)
-.addField(`GenZ has met`, `**${client.users.size}** users`, true)
-.addField("Node.js version",`**${process.version}**`, true)
-.addField("Discord.js version",`**v${Discord.version}**`, true)
-.addField("code has a virus?",`**|No|**`, true)
+.setTitle("GenZ Satus")
+
+.setThumbnail(`https://media.discordapp.net/attachments/843359821905920021/848058160274341959/6360-trees-anime-manga-forest_1.jpg?width=1017&height=572`, ` **faf** server(s)`, true)
+
 let m = await message.channel.send({embed:info});
 }

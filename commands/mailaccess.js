@@ -24,6 +24,7 @@ exports.run = (client, message, args) => {
             let embed = new Discord.RichEmbed()
             .setTitle('__Mailaccess Alt!__')
             .addField('`Here is your Mailaccess Alt:`', `**${random}**`)
+            .addField('`login here:`', `**https://www.freenet.de/index.html#**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
             .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.mQiRjfCSpRXE3PwFpTAqUwHaFj&pid=Api&P=0&w=228&h=172")

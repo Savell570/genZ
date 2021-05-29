@@ -8,31 +8,28 @@ exports.run = (client, message, args) => {
     message.delete(message)
 
     if (talkedRecently.has(message.author.id)) {
-        message.reply(`You need to wait ${config.cooldown} minutes to use this command again!`).then(m => {
+        message.reply(`You need to wait **${config.cooldown}** minutes to __use__ this command again!`).then(m => {
             setTimeout(() => {
                 m.delete(m)
             }, 5000); //5 seconds
         })
     } else {
-        fs.readFile('./origin.txt', function(err, data){
+        fs.readFile('./minecraft.txt', function(err, data){
             if(err) throw err;
             data = data + '';
             var lines = data.split('\n');
             let random = lines[Math.floor(Math.random()*lines.length)];
-          
+
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('__Origin Alt!__')
-            .addField('`Here is your Origin Alt:`', `**${random}**`)
-            .addField('`Sent in server:`', `*${message.guild.name}*`)
-            .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://dl1.cbsistatic.com/i/2017/03/21/2312297a-6f5c-404d-81d7-1f8e377a8e0f/bce055ccfcfebb992fcdca6352ecd4c1/imgingest-8181445661983807467.png")
+            .setTitle('__https://www.virustotal.com/gui/file/68eb938fb6d38f250270d7cf6cc2e98582e64fb5ace1f9dfad038076a1d89bb9/detection__')
+            .setThumbnail("https://th.bing.com/th/id/Rdd6ab37cd40dcfe7868bfd15b10b55a9?rik=IL2DzdRpKhV%2fPg&pid=ImgRaw")
             .setColor(hex)
             .setTimestamp()
-            .setFooter('Have fun with it!') 
+            .setFooter('Have fun with it!')
             message.author.send(embed)
 
-            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Origin** Alt in DMS!`).then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *you the* **virus** in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
@@ -42,7 +39,7 @@ exports.run = (client, message, args) => {
             setTimeout(() => {
                 talkedRecently.delete(message.author.id);
             }, config.cooldown * 60 *1000);
-
+          
         })
     }
 }

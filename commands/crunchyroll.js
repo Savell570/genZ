@@ -23,10 +23,11 @@ exports.run = (client, message, args) => {
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
             .setTitle('__Crunchyroll Alt!__')
-            .addField('`Here is your Crunchyroll Alt:`', `**${random}**`)
+            .addField('`Here is your **Crunchyroll** Alt:`', `**${random}**`)
+            .addField('`login here:`', `**https://www.crunchyroll.com/login?next=%2F**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://cdn.discordapp.com/attachments/816788275149668382/817354557889052722/image0.jpg")
+            .setThumbnail("https://images-ext-1.discordapp.net/external/Zt0ZI4FsnPJV1-UTx1B3d-n1TbF8qygKH8ERDz62vq4/%3Fwidth%3D80%26height%3D60/https/media.discordapp.net/attachments/816788275149668382/817354557889052722/image0.jpg")
             .setColor(hex)
             .setTimestamp()
             .setFooter('Have fun with it!')

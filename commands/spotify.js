@@ -5,7 +5,16 @@ const talkedRecently = new Set();
 
 exports.run = (client, message, args) => {
 
-        fs.readFile('./nordvpn.txt', function(err, data){
+    message.delete(message)
+
+    if (talkedRecently.has(message.author.id)) {
+        message.reply(`You need to wait ${config.cooldown} minutes to use this command again!`).then(m => {
+            setTimeout(() => {
+                m.delete(m)
+            }, 5000); //5 seconds
+        })
+    } else {
+        fs.readFile('./spotify.txt', function(err, data){
             if(err) throw err;
             data = data + '';
             var lines = data.split('\n');
@@ -13,17 +22,18 @@ exports.run = (client, message, args) => {
 
             let hex = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
             let embed = new Discord.RichEmbed()
-            .setTitle('__NordVPN Alt!__')
-            .addField('`Here is your NordVPN Alt:`', `**${random}**`)
+            .setTitle('__Spotify Alt!__')
+            .addField('`Here is your Spotify Alt:`', `**${random}**`)
+            .addField('`login here:`', `**https://accounts.spotify.com/en/login**`)
             .addField('`Sent in server:`', `*${message.guild.name}*`)
             .addField('`Sent in channel:`', `*${message.channel.name}*`)
-            .setThumbnail("https://tse2.mm.bing.net/th?id=OIP.j6Ue1697V7mWU-J0ob8fGQHaFG&pid=Api&P=0&w=237&h=164")
+            .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png")
             .setColor(hex)
             .setTimestamp()
-            .setFooter('Have fun with it!')
+            .setFooter('Have fun with it!') 
             message.author.send(embed)
 
-            message.reply(`Hey **${message.author.tag}**, I __successfully__ set *your* **NordVPN** Alt in DMS!`).then(m => {
+            message.reply(`Hey **${message.author.tag}**, I __successfully__ sent *your* **Spotify** Alt in DMS!`).then(m => {
                 setTimeout(() => {
                     m.delete(m)
                 }, 5000); //5 seconds
@@ -33,6 +43,7 @@ exports.run = (client, message, args) => {
             setTimeout(() => {
                 talkedRecently.delete(message.author.id);
             }, config.cooldown * 60 *1000);
-          
+
         })
     }
+}

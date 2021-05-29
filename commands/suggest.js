@@ -38,7 +38,7 @@ exports.run = async (client, message, args, tools) => {
     .addField("­­­", `\`\`\`${table.table(possibleInvites)}\`\`\``, true)
     .setTimestamp()
     .setFooter("Suggestion Sent.");
-  client.users.get("828294785650917456").sendMessage(embed);
+  client.users.get("843156417238401075").sendMessage(embed);
   message.delete();
   message.channel.send(
     `*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the suggestion:* **__${command}__** to **𝖗𝖊𝖙𝖆𝖗𝖉 𝕨𝕖𝕒𝕣𝕚𝕟𝕘 𝖓𝖎𝖓𝖏𝖆 ꜱʜᴏᴇꜱ#5484** !`

